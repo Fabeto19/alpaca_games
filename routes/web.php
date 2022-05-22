@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
+use App\Models\Juegos;
+use App\Models\Ofertas;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/usuarios', function () {
+    return User::All();
+});
+Route::get('/categorias', function () {
+    return \App\Models\Categoria::All();
+});
+Route::get('/juegos', function () {
+    return \App\Models\Juegos::All();
+});
+Route::get('/ofertas', function () {
+    return \App\Models\Ofertas::All();
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

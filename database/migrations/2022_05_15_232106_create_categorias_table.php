@@ -15,14 +15,7 @@ class CreateCategoriasTable extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->string('Free to play');
-            $table->string('Accion');
-            $table->string('Aventura');
-            $table->string('Multijugador masivo');
-            $table->string('Rol');
-            $table->string('Deportes');
-            $table->string('Estrategia');
-            $table->string('Carreras');
+            $table->string("descripcion");
             $table->timestamps();
         });
     }
